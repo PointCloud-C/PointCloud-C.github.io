@@ -1,0 +1,117 @@
+<!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+
+<!DOCTYPE html>
+<!--
+	Transit by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>PointCloud-C @ ECCV 2022</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<h1>PointCloud-C</h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="./home.html" class="button special">Home</a></li>
+						<li><a href="./details.html" class="button special">Details</a></li>
+						<li><a href="./download.html" class="button special">Download</a></li>
+						<li><a href="benchmark.html">Challenge</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+
+					<header class="major">
+						<h2>Current Challenge</h2>
+					</header>
+
+					<hr />
+
+					<!-- Text -->
+					<section>
+
+					<h2>PointCloud-C @ ECCV 2022</h2>
+					<h4>Overview</h4>
+					<p>
+						The 1st PointCloud-C challenge is hosted in conjecture with the ECCV'22 <a href="https://sense-human.github.io" target=blank><strong>SenseHuman</strong></a> workshop.
+						It aims at providing a comprehensive test-suite for point cloud robustness analysis under corruptions. 
+						It includes two seperated sets for point cloud <strong>classification</strong> and <strong>part segmentation</strong>, respectively.
+						For more details, please refer to our technical reports.
+					</p>
+
+					<h4>Download</h4>
+					<p>
+						Please refer to this <a href="./download.html" target=blank><strong>page</strong></span></a> to access the data.
+					</p>
+
+					<h4>Competition @ CodaLab</h4>
+					<p>Coming soon.</p>
+
+					<h4>Protocol</h4>
+					<p>
+						In this competition, one has to provide labels for each point of all test splits of the datasets. 
+						Therefore, the input to all evaluated methods is a list of coordinates of the three-dimensional points along with their appearance, i.e., the RGB value of each point. Each method should then output a label for each point, this is used for the final performance evaluation. </p>
+
+					<h4>Metrics</h4>
+					<p>
+					In this benchmark, to normalize the severity of different corruptions, we choose
+					DGCNN (Wang et al., 2018), a classic point cloud recognition method, as the
+					baseline. Inspired by the 2D robustness evaluation metrics
+					(Hendrycks & Dietterich, 2019), we use mean CE (mCE), as the primary metric. Please refer to our papers for more detailed definitions.
+					</p>
+
+					<h4>Contact</h4>
+					<p>
+						If you encounter any problems, please get in touch with us at <a><strong>jiawei011@e.ntu.edu.sg</strong></span></a> and <a><strong>lingdong001@e.ntu.edu.sg</strong></span></a>.</p>
+					</p>
+
+					
+
+				</section>			
+			</section>
+
+		<!-- Footer -->
+			<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="8u 12u$(medium)">
+							<ul class="copyright">
+								<li>&copy; 2022 S-Lab, Nanyang Technological University. All rights reserved.</li>
+							</ul>
+						</div>
+						<div class="4u$ 12u$(medium)">
+							<ul class="icons">
+								<li>
+									<a href="https://github.com/ldkong1205" class="icon fa-github" target=blank><span class="label">GitHub</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+
+	</body>
+</html>
