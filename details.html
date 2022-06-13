@@ -1,0 +1,175 @@
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+<!DOCTYPE html>
+<!--
+	Transit by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>PointCloud-C @ ECCV 2022</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/html5shiv.js"></script>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<h1>PointCloud-C</h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="./home.html" class="button special">Home</a></li>
+						<li><a href="details.html">Details</a></li>
+						<li><a href="./download.html" class="button special">Download</a></li>
+						<li><a href="./benchmark.html" class="button special">Challenge</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+
+					<header class="major">
+						<h2>Benchmark Details</h2>
+					</header>
+
+					<hr />
+
+					<!-- Text -->
+						<section>
+							<h2>Corruption Taxonomy</h2>
+								<div class="row 50% uniform">
+									<div class="12u$"><span class="image fit"><img src="images/taxonomy.png" alt="" /></span></div>
+								</div>
+
+							<hr />
+
+							<h2>Corruption Definitions</h2>
+							<div class="table-wrapper">
+								<table class="alt">
+									<tbody>
+										<tr>
+											<td><strong>Corruptions</strong></td>
+											<td><strong>Severity Level Settings</strong></td>
+										</tr>
+										<tr>
+											<td>Jitter</td>
+											<td>
+												We add a Gaussian noise ϵ ∈ N(0, σ^2) to each of a point’s X, Y and Z coordinates, where σ ∈ {0.01, 0.02, 0.03, 0.04, 0.05}
+												for the five levels
+											</td>
+										</tr>
+										<tr>
+											<td>Scale</td>
+											<td>
+												We apply random scaling to the X, Y and Z axis respectively. The scaling coefficient for each axis are independently sampled
+												as s ∼ U(1/S, S), where S ∈ {1.6, 1.7, 1.8, 1.9, 2.0} for the five levels. Point clouds are re-normalized to a unit sphere
+												after scaling.
+											</td>
+										</tr>
+										<tr>
+											<td>Rotate</td>
+											<td>
+												We randomly apply a rotation described by an X-Y-Z Euler angle (α, β, γ), where α, β, γ ∼ U(−θ, θ) and θ ∈
+												{π/30, π/15, π/10, π/7.5, π/6} for the five levels. Note that the sampling method does not guarantee a uniform SO(3)
+												rotation sampling, but sufficient to cover a range of rotation variations.
+											</td>
+										</tr>
+										<tr>
+											<td>Drop Global</td>
+											<td>
+												We randomly shuffle all points and drop the last N ∗ ρ points, where N = 1024 is the number of points in the point cloud
+												and ρ ∈ {0.25, 0.375, 0.5, 0.675, 0.75} for all five levels.
+											</td>
+										</tr>
+										<tr>
+											<td>Drop Local</td>
+											<td>
+												We drop K points in total, where K ∈ {100, 200, 300, 400, 500} for the five levels. We randomly choose C, the number of
+												local parts to drop, by C ∈ U{1, 8}. We further randomly assign i-th local part a cluster size Ni.
+												Then we repeat the following steps for C times: we randomly select a point as the i-th local center, and drop its Ni-nearest
+												neighbour points (including itself) from the point cloud.
+											</td>
+										</tr>
+										<tr>
+											<td>Add Global</td>
+											<td>
+												We uniformly sample K points inside a unit sphere and add them to the point cloud, where K ∈ {10, 20, 30, 40, 50} for the
+												five levels.
+											</td>
+										</tr>
+										<tr>
+											<td>Add Local</td>
+											<td>
+												We add K points in total, where K ∈ {100, 200, 300, 400, 500} for the five levels. We randomly shuffle the points, and
+												select the first C ∈ U{1, 8} points as the local centers. We further randomly assign i-th local part a cluster size Ni. Neighbouring point’s X-Y-Z coordinates are generated from a Normal distribution N(μi, σi^2 I), where μi is
+												the i-th local center’s X-Y-Z coordinate and σi ∈ U(0.075, 0.125). We then add each local part to the point cloud one by
+												one.
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<hr />
+
+							<h2>Classification</h2>
+								<div class="row 50% uniform">
+									<div class="12u$"><span class="image fit"><img src="images/classification.jpg" alt="" /></span></div>
+								</div>
+							
+							<hr />
+
+							<h2>Part Segmentation</h2>
+								<div class="row 50% uniform">
+									<div class="12u$"><span class="image fit"><img src="images/partseg.png" alt="" /></span></div>
+								</div>
+
+							<hr />
+
+
+							
+
+				</section>			
+			</section>
+
+		<!-- Footer -->
+			<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="8u 12u$(medium)">
+							<ul class="copyright">
+								<li>&copy; 2022 S-Lab, Nanyang Technological University. All rights reserved.</li>
+							</ul>
+						</div>
+						<div class="4u$ 12u$(medium)">
+							<ul class="icons">
+								<li>
+									<a href="https://github.com/jiawei-ren/ModelNet-C" class="icon fa-github" target=blank><span class="label">GitHub</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+
+	</body>
+</html>
